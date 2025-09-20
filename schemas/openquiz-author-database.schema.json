@@ -1,0 +1,76 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Open Quiz Format - Private Author Database",
+  "type": "object",
+  "properties": {
+    "uuid": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Unique identifier for the author."
+    },
+    "nickname": {
+      "type": "string",
+      "description": "Display nickname for the author."
+    },
+    "name": {
+      "type": "string",
+      "description": "Full legal or display name."
+    },
+    "namePublic": { "type": "boolean", "default": false },
+
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "Author's email address."
+    },
+    "emailPublic": { "type": "boolean", "default": false },
+
+    "phone": {
+      "type": "string",
+      "description": "Author's phone number."
+    },
+    "phonePublic": { "type": "boolean", "default": false },
+
+    "location": {
+      "type": "string",
+      "description": "Geographic location."
+    },
+    "locationPublic": { "type": "boolean", "default": false },
+
+    "language": {
+      "type": "string",
+      "description": "Primary language (ISO 639-1)."
+    },
+    "languagePublic": { "type": "boolean", "default": true },
+
+    "website": {
+      "type": "string",
+      "format": "uri",
+      "description": "Personal website or profile."
+    },
+    "websitePublic": { "type": "boolean", "default": true },
+
+    "bio": {
+      "type": "string",
+      "description": "Short biography or description."
+    },
+    "bioPublic": { "type": "boolean", "default": true },
+
+    "created": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the profile was first created (YYYY-MM-DD)."
+    },
+    "lastModified": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the profile was last modified (YYYY-MM-DD)."
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Version number of this profile."
+    }
+  },
+  "required": ["uuid", "nickname"]
+}

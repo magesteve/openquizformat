@@ -1,0 +1,191 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Open Quiz Format - Quiz",
+  "type": "object",
+  "properties": {
+    "quiz": {
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "type": "string",
+          "format": "uuid",
+          "description": "Unique identifier for this quiz."
+        },
+        "schemaVersion": {
+          "type": "string",
+          "enum": ["1.3"],
+          "description": "Schema version identifier."
+        },
+        "meta": {
+          "type": "object",
+          "properties": {
+            "title": { "type": "string" },
+            "subject": { "type": "string" },
+            "description": { "type": "string" },
+            "authorId": { "type": "string", "format": "uuid" },
+            "author": { "type": "string" },
+            "nickname": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "description": "Public nickname of the author (no spaces or special characters)."
+            },
+            "version": { "type": "integer", "minimum": 1 },
+            "created": { "type": "string", "format": "date" },
+            "lastModified": { "type": "string", "format": "date" },
+            "timeLimitSeconds": { "type": "integer", "minimum": 0 },
+            "shuffleQuestions": { "type": "boolean" },
+            "randomize": { "type": "boolean" },
+            "maxScore": { "type": "integer", "minimum": 0 },
+            "sourceUrl": { "type": "string", "format": "uri" },
+            "rating": {
+              "type": "string",
+              "enum": ["family", "teenager", "adult", "mature"]
+            },
+            "keywords": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "networkRequirement": {
+              "type": "string",
+              "enum": ["required", "optional", "none"]
+            },
+            "uiModes": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": ["audio_only", "keyboard", "click", "tv"]
+              },
+              "minItems": 1,
+              "uniqueItems": true
+            },
+            "ratings": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "minScore": { "type": "integer" },
+                  "maxScore": { "type": "integer" },
+                  "title": { "type": "string" }
+                },
+                "required": ["minScore", "maxScore", "title"]
+              }
+            }
+          },
+          "required": [
+            "title",
+            "subject",
+            "authorId",
+            "author",
+            "nickname",
+            "version",
+            "created",
+            "lastModified",
+            "rating",
+            "maxScore",
+            "networkRequirement",
+            "uiModes"
+          ]
+        },
+        "rounds": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "uuid": { "type": "string", "format": "uuid" },
+              "roundNumber": { "type": "integer" },
+              "difficulty": {
+                "type": "string",
+                "enum": ["easy", "medium", "hard"]
+              },
+              "questions": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "uuid": { "type": "string", "format": "uuid" },
+                    "id": { "type": "integer" },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "true_false",
+                        "multiple_choice",
+                        "multiple_select",
+                        "short_answer",
+                        "numeric",
+                        "ordering"
+                      ]
+                    },
+                    "difficulty": {
+                      "type": "string",
+                      "enum": ["easy", "medium", "hard"]
+                    },
+                    "points": { "type": "integer", "minimum": 0 },
+                    "questionText": { "type": "string" },
+                    "options": {
+                      "type": "array",
+                      "items": { "type": "string" }
+                    },
+                    "answerIndex": { "type": "integer" },
+                    "answerIndexes": {
+                      "type": "array",
+                      "items": { "type": "integer" }
+                    },
+                    "answer": {
+                      "oneOf": [
+                        { "type": "string" },
+                        { "type": "boolean" },
+                        { "type": "number" }
+                      ]
+                    },
+                    "acceptedAnswers": {
+                      "type": "array",
+                      "items": { "type": "string" }
+                    },
+                    "numericRange": {
+                      "type": "object",
+                      "properties": {
+                        "min": { "type": "number" },
+                        "max": { "type": "number" }
+                      }
+                    },
+                    "ordering": {
+                      "type": "array",
+                      "items": { "type": "string" }
+                    },
+                    "explanation": { "type": "string" },
+                    "media": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "enum": ["image", "audio", "video"]
+                          },
+                          "url": { "type": "string", "format": "uri" }
+                        },
+                        "required": ["type", "url"]
+                      }
+                    },
+                    "moreInfoUrl": { "type": "string", "format": "uri" }
+                  },
+                  "required": [
+                    "uuid",
+                    "id",
+                    "type",
+                    "difficulty",
+                    "points",
+                    "questionText"
+                  ]
+                }
+              }
+            },
+            "required": ["uuid", "roundNumber", "difficulty", "questions"]
+          }
+        }
+      },
+      "required": ["uuid", "schemaVersion", "meta", "rounds"]
+    }
+  },
+  "required": ["quiz"]
+}

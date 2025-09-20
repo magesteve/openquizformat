@@ -1,0 +1,127 @@
+{
+  "quiz": {
+    "uuid": "9D5BE574-AA9F-4830-ACB5-00B237527A7B",
+    "schemaVersion": "1.0",
+    "meta": {
+      "title": "Disney Princess Trivia Challenge",
+      "subject": "Disney",
+      "description": "Test your knowledge of the Disney Princess franchise across three rounds of increasing difficulty.",
+      "authorId": "59773C42-85F5-4970-9B11-0770485B1632",
+      "author": "Steve Sheets",
+      "version": 2,
+      "created": "2025-09-18",
+      "lastModified": "2025-09-19",
+      "timeLimitSeconds": 1800,
+      "shuffleQuestions": false,
+      "randomize": true,
+      "maxScore": 300,
+      "sourceUrl": "https://github.com/magesteve/disney-princess-trivia",
+      "rating": "family",
+      "keywords": ["Disney", "princess", "cartoon", "movies", "fairy tale"],
+      "networkRequirement": "optional",
+      "uiModes": ["audio_only", "keyboard", "click", "tv"],
+      "ratings": [
+        { "minScore": 0, "maxScore": 50, "title": "Terrible Mouse" },
+        { "minScore": 51, "maxScore": 70, "title": "Casual Disney Fan" },
+        { "minScore": 71, "maxScore": 100, "title": "Avid Disney Fan" }
+      ]
+    },
+    "rounds": [
+      {
+        "uuid": "22222222-2222-2222-2222-222222222222",
+        "roundNumber": 1,
+        "difficulty": "easy",
+        "questions": [
+          {
+            "uuid": "q1",
+            "id": 1,
+            "type": "true_false",
+            "difficulty": "easy",
+            "points": 5,
+            "questionText": "Ariel is the main character in The Little Mermaid.",
+            "answer": true,
+            "explanation": "Ariel is indeed the Little Mermaid in Disney’s classic movie."
+          },
+          {
+            "uuid": "q2",
+            "id": 2,
+            "type": "multiple_choice",
+            "difficulty": "easy",
+            "points": 5,
+            "questionText": "Which Disney Princess has a raccoon friend?",
+            "options": ["Belle", "Pocahontas", "Aurora", "Elsa"],
+            "answerIndex": 1,
+            "explanation": "Pocahontas has a raccoon named Meeko."
+          },
+          {
+            "uuid": "q3",
+            "id": 3,
+            "type": "short_answer",
+            "difficulty": "easy",
+            "points": 5,
+            "questionText": "What is the name of Belle’s father in Beauty and the Beast?",
+            "answer": "Maurice",
+            "acceptedAnswers": ["Maurice"],
+            "explanation": "Belle’s father is the inventor Maurice."
+          }
+        ]
+      },
+      {
+        "uuid": "33333333-3333-3333-3333-333333333333",
+        "roundNumber": 2,
+        "difficulty": "medium",
+        "questions": [
+          {
+            "uuid": "q11",
+            "id": 11,
+            "type": "true_false",
+            "difficulty": "medium",
+            "points": 10,
+            "questionText": "Rapunzel’s hair is magically long even after it is cut.",
+            "answer": false,
+            "explanation": "Her magic disappears once her hair is cut."
+          },
+          {
+            "uuid": "q12",
+            "id": 12,
+            "type": "multiple_choice",
+            "difficulty": "medium",
+            "points": 10,
+            "questionText": "Which princess disguises herself as a soldier?",
+            "options": ["Mulan", "Merida", "Jasmine", "Tiana"],
+            "answerIndex": 0,
+            "explanation": "Mulan disguises herself to join the army."
+          }
+        ]
+      },
+      {
+        "uuid": "44444444-4444-4444-4444-444444444444",
+        "roundNumber": 3,
+        "difficulty": "hard",
+        "questions": [
+          {
+            "uuid": "q21",
+            "id": 21,
+            "type": "short_answer",
+            "difficulty": "hard",
+            "points": 20,
+            "questionText": "What is the original fairy tale source for Sleeping Beauty?",
+            "answer": "La Belle au bois dormant",
+            "acceptedAnswers": ["La Belle au bois dormant", "Sleeping Beauty"],
+            "explanation": "The tale was popularized by Charles Perrault as 'La Belle au bois dormant.'"
+          },
+          {
+            "uuid": "q22",
+            "id": 22,
+            "type": "true_false",
+            "difficulty": "hard",
+            "points": 20,
+            "questionText": "Snow White was Disney’s first full-length animated feature film.",
+            "answer": true,
+            "explanation": "Snow White (1937) was indeed Disney’s first feature-length animated film."
+          }
+        ]
+      }
+    ]
+  }
+}

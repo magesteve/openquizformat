@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Open Quiz Format - Public Author Profile",
+  "type": "object",
+  "properties": {
+    "uuid": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Unique identifier for the author."
+    },
+    "nickname": {
+      "type": "string",
+      "description": "Display nickname for the author."
+    },
+    "name": {
+      "type": "string",
+      "description": "Full legal or display name."
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "Public contact email."
+    },
+    "phone": {
+      "type": "string",
+      "description": "Public phone number (if author chooses to disclose)."
+    },
+    "location": {
+      "type": "string",
+      "description": "Geographic location (city, state, country)."
+    },
+    "language": {
+      "type": "string",
+      "description": "Primary language (ISO 639-1 code recommended, e.g., 'en')."
+    },
+    "website": {
+      "type": "string",
+      "format": "uri",
+      "description": "Public website or profile link."
+    },
+    "bio": {
+      "type": "string",
+      "description": "Short biography or description."
+    },
+    "created": {
+      "type": "string",
+      "format": "date",
+      "description": "Date this profile was created (YYYY-MM-DD)."
+    },
+    "lastModified": {
+      "type": "string",
+      "format": "date",
+      "description": "Date this profile was last updated (YYYY-MM-DD)."
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Version number of this profile entry."
+    }
+  },
+  "required": ["uuid", "nickname"]
+}

@@ -1,0 +1,25 @@
+Open Database License (ODbL) v1.0
+For Open Trivia Format (OTF)
+
+Copyright (C) 2025 The Open Trivia Format Contributors
+
+You are free:
+
+- To Share: To copy, distribute and use the OTF specification and any data encoded in OTF.
+- To Create: To produce works from OTF data, such as derivative databases, new trivia sets, or modified formats.
+- To Adapt: To modify, transform, and build upon OTF and OTF data.
+
+As long as you:
+
+- Attribute: You must attribute any public use of OTF or OTF data, in the manner specified by the contributors. For example, include a notice such as "Data uses Open Trivia Format (OTF), licensed under ODbL."
+- Share-Alike: If you publicly use any adapted version of OTF data, you must also offer it under ODbL.
+- Keep Open: Any public distribution of data in OTF must remain open and licensed under ODbL. Software that merely uses OTF (such as trivia apps) is not required to be open source.
+
+Additional Terms:
+
+- The OTF specification itself is open and free to use. Any software may implement OTF, whether open source or proprietary.
+- However, any trivia question sets, quizzes, or other data published in OTF must remain open under this license.
+
+No additional restrictions: You may not apply legal terms or technological measures that legally restrict others from doing anything this license permits.
+
+DISCLAIMER: The OTF is licensed "as is" and without warranties. The licensors are not liable for any damages arising from its use.
